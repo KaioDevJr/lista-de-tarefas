@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8" font-family="Arial">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lista de Tarefas</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-LN+7fdVzj6u52u30Kp6M/trliBMCMKTyK833zpbD+pXdCLuTusPj697FH4R/5mcr" crossorigin="anonymous">
+    <style>
+        .badge-alta {
+            background-color: #dc3545; /* prioridade alta */
+        }
+        .badge-média {
+            background-color: #fbff07; /* prioridade média */
+        }
+        .badge-baixa {
+            background-color: #28a745; /* prioridade baixa */
+        }
+        body {
+           background-image: url("./bg.jpg");
+              background-size: cover;
+              background-position: center;  
+              
+        }
+    </style>
+</head>
+<body class="bg-light">
+    <div class="container py-5">
+        <h2 class="mb-4 fw-bold">Lista de Tarefas!</h2>
+
+            <div class="card p-4 mb-4 shadow bg-white">
+                <form id="taskForm">
+                    <div class="row g-3">
+                        <div class="col-md-8">
+                            <label for="tarefaInput" class="form-label">Nova Tarefa</label>
+                            <input type="text" class="form-control" id="tarefaInput" placeholder="Adicione uma nova tarefa" required>
+                        </div>
+                        <div class="col-md-3">
+                            <label for="prioritySelect" class="form-label">Prioridade</label>
+                            <select class="form-select" id="prioritySelect" required>
+                                <option value="" disabled selected>Selecione a prioridade</option>
+                                <option value="Alta">Alta</option>
+                                <option value="Média">Média</option>
+                                <option value="Baixa">Baixa</option>
+                            </select>
+                        </div>
+                        <div class="col-md-1 d-flex justify-content-center align-items-end">
+
+                            <button id="adicionarBtn" type="submit" class="btn btn-primary">Adicionar</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+            <div>
+                <table class="table table-bordered table-hover align-items-center" id="table">
+                    <thead class="table-light">
+                        <tr>
+                            <th>Tarefa</th>
+                            <th>Prioridade</th>
+                            <th>Ação</th>
+                        </tr>
+                    </thead>
+                    <tbody id="tabelaTarefas">
+                        <!-- As tarefas serão inseridas aqui dinamicamente -->
+                        
+
+                    </tbody>
+
+                </table>
+            </div>
+
+    </div>
+
+ <script src="./script.js"></script>
+</body>
+
+</html>
